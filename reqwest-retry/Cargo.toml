@@ -1,5 +1,5 @@
 [package]
-name = "reqwest-retry"
+name = "reqwest-retry-wasm"
 version = "0.2.2"
 authors = ["Rodrigo Gryzinski <rodrigo.gryzinski@truelayer.com>"]
 edition = "2018"
@@ -10,14 +10,14 @@ keywords = ["reqwest", "http", "middleware", "retry"]
 categories = ["web-programming::http-client"]
 
 [dependencies]
-reqwest-middleware = { version = "0.2.0", path = "../reqwest-middleware" }
+reqwest-middleware = { version = "0.2.0", path = "../reqwest-middleware", package = "reqwest-middleware-wasm" }
 
 anyhow = "1.0.0"
 async-trait = "0.1.51"
 chrono = { version = "0.4.19", features = ["clock"], default-features = false }
 futures = "0.3.0"
 http = "0.2.0"
-reqwest = { version = "0.11.0", default-features = false }
+reqwest = { git = "https://github.com/ulagbulag/reqwest-wasm.git", package = "reqwest-wasm", version = "0.11", default-features = false }
 retry-policies = "0.1.0"
 task-local-extensions = "0.1.4"
 tracing = "0.1.26"

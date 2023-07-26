@@ -17,10 +17,10 @@ Attach `TracingMiddleware` to your client to automatically trace HTTP requests:
 # ...
 [dependencies]
 opentelemetry = "0.18"
-reqwest = "0.11"
-reqwest-middleware = "0.1.1"
-reqwest-retry = "0.1.1"
-reqwest-tracing = { version = "0.3.1", features = ["opentelemetry_0_18"] }
+reqwest = { git = "https://github.com/ulagbulag/reqwest-wasm.git", package = "reqwest-wasm", version = "0.11" }
+reqwest-middleware = { git = "https://github.com/ulagbulag/reqwest-middleware-wasm.git", package = "reqwest-middleware-wasm", version = "0.1.1" }
+reqwest-retry = { git = "https://github.com/ulagbulag/reqwest-middleware-wasm.git", package = "reqwest-retry-wasm", version = "0.1.1" }
+reqwest-tracing = { git = "https://github.com/ulagbulag/reqwest-middleware-wasm.git", package = "reqwest-tracing-wasm", version = "0.3.1", features = ["opentelemetry_0_18"] }
 tokio = { version = "1.12.0", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1"
 tracing-opentelemetry = "0.18"

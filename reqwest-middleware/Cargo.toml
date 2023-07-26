@@ -1,5 +1,5 @@
 [package]
-name = "reqwest-middleware"
+name = "reqwest-middleware-wasm"
 version = "0.2.2"
 authors = ["Rodrigo Gryzinski <rodrigo.gryzinski@truelayer.com>"]
 edition = "2018"
@@ -14,14 +14,17 @@ readme = "../README.md"
 anyhow = "1.0.0"
 async-trait = "0.1.51"
 http = "0.2.0"
-reqwest = { version = "0.11.4", default-features = false, features = ["json", "multipart"] }
+reqwest = { git = "https://github.com/ulagbulag/reqwest-wasm.git", package = "reqwest-wasm", version = "0.11", default-features = false, features = [
+    "json",
+    "multipart",
+] }
 serde = "1.0.106"
 task-local-extensions = "0.1.4"
 thiserror = "1.0.21"
 
 [dev-dependencies]
-reqwest = "0.11.4"
-reqwest-retry = { path = "../reqwest-retry" }
-reqwest-tracing = { path = "../reqwest-tracing" }
+reqwest = { git = "https://github.com/ulagbulag/reqwest-wasm.git", package = "reqwest-wasm", version = "0.11" }
+reqwest-retry = { path = "../reqwest-retry", package = "reqwest-retry-wasm" }
+reqwest-tracing = { path = "../reqwest-tracing", package = "reqwest-tracing-wasm" }
 tokio = { version = "1.0.0", features = ["macros", "rt-multi-thread"] }
 wiremock = "0.5.0"
